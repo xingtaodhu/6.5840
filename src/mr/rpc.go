@@ -24,6 +24,18 @@ type ExampleReply struct {
 
 // Add your RPC definitions here.
 
+type TaskArgs struct {
+	WorkerID        int
+	FinishedTask    Task
+	HasFinishedTask bool
+}
+
+type TaskReply struct {
+	Task        Task
+	WorkerID    int
+	haveNewTask bool
+	AllTaskDone bool
+}
 
 // Cook up a unique-ish UNIX-domain socket name
 // in /var/tmp, for the coordinator.
